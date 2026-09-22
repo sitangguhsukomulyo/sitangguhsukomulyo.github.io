@@ -6,14 +6,40 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Web GIS SiTANGGUH Sukomulyo</title>
-    <!-- Ikon Favicon agar terlihat seperti website resmi -->
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/d/d3/Lambang_Kabupaten_Gresik.png" type="image/png">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #1f2937; }
-        iframe { width: 100vw; height: 100vh; border: none; }
+        /* Perbaikan Anti-Macet untuk Mobile */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background: #1f2937;
+            -webkit-overflow-scrolling: touch; 
+        }
+        .iframe-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbwr0qEPCyf74wlGez4DO63nzEokfeudIs0-_yFpwhG0bRBN0246G1at5wZBIPcmHc4z/exec"></iframe>
+    <div class="iframe-wrapper">
+        <iframe src="https://script.google.com/macros/s/AKfycbwr0qEPCyf74wlGez4DO63nzEokfeudIs0-_yFpwhG0bRBN0246G1at5wZBIPcmHc4z/exec" scrolling="yes" allow="geolocation"></iframe>
+    </div>
 </body>
 </html>
